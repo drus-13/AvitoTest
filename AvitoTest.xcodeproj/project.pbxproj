@@ -20,6 +20,8 @@
 		55D4754D26D6D6D100F51188 /* MainViewPresenterOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4754C26D6D6D100F51188 /* MainViewPresenterOutput.swift */; };
 		55D4755026D6D9DA00F51188 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4754F26D6D9DA00F51188 /* Constants.swift */; };
 		55D4755326D6DBBD00F51188 /* NetworkResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755226D6DBBD00F51188 /* NetworkResponseModel.swift */; };
+		55D4755526D79E5800F51188 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755426D79E5700F51188 /* MainTableViewCell.swift */; };
+		55D4755826D9326100F51188 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755726D9326100F51188 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		55D4754C26D6D6D100F51188 /* MainViewPresenterOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenterOutput.swift; sourceTree = "<group>"; };
 		55D4754F26D6D9DA00F51188 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		55D4755226D6DBBD00F51188 /* NetworkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseModel.swift; sourceTree = "<group>"; };
+		55D4755426D79E5700F51188 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		55D4755726D9326100F51188 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		55D4752526D6D2EE00F51188 /* AvitoTest */ = {
 			isa = PBXGroup;
 			children = (
+				55D4755626D9325400F51188 /* Extension */,
 				55D4754E26D6D9CD00F51188 /* Constants */,
 				55D4754626D6D67D00F51188 /* Model */,
 				55D4754526D6D67600F51188 /* Presenter */,
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				55D4752A26D6D2EE00F51188 /* MainViewController.swift */,
+				55D4755426D79E5700F51188 /* MainTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 				55D4754F26D6D9DA00F51188 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		55D4755626D9325400F51188 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				55D4755726D9326100F51188 /* Date.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +237,8 @@
 				55D4754226D6D46600F51188 /* NetworkService.swift in Sources */,
 				55D4752926D6D2EE00F51188 /* SceneDelegate.swift in Sources */,
 				55D4754D26D6D6D100F51188 /* MainViewPresenterOutput.swift in Sources */,
+				55D4755526D79E5800F51188 /* MainTableViewCell.swift in Sources */,
+				55D4755826D9326100F51188 /* Date.swift in Sources */,
 				55D4754A26D6D6B600F51188 /* MainViewPresenterInput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

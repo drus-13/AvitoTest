@@ -9,4 +9,6 @@ import Foundation
 
 protocol MainViewPresenterOutput: AnyObject {
     func fetchData()
+    func getEmployeesCount() -> Int
+    func getEmployee(for row: Int) -> Employee?
 }
