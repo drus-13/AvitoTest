@@ -50,6 +50,8 @@ class MainViewController: UIViewController, MainViewPresenterInput {
         guard let employee = presenter.getEmployee(for: indexPath.row) else { return UITableViewCell() }
         
         cell.setDataInCell(data: employee)
+        cell.setIndex(index: indexPath.row)
+        cell.setMainViewController(controller: self)
         return cell
     }
     
@@ -100,3 +102,10 @@ extension MainViewController: UITableViewDataSource {
 }
 
 extension MainViewController: UITableViewDelegate { }
+
+extension MainViewController: MainTableViewCellDelegate {
+    
+    func getSkillsData(index: Int) -> [String] {
+        presenter.getResponseData().company.employees[index].skills
+    }
+}

@@ -71,4 +71,9 @@ class MainViewPresenter: MainViewPresenterOutput {
         
         return employee
     }
+    
+    // MARK: - Get Response Data
+    func getResponseData() -> NetworkResponseModel {
+        return data!
+    }
 }

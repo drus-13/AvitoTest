@@ -22,6 +22,7 @@
 		55D4755326D6DBBD00F51188 /* NetworkResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755226D6DBBD00F51188 /* NetworkResponseModel.swift */; };
 		55D4755526D79E5800F51188 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755426D79E5700F51188 /* MainTableViewCell.swift */; };
 		55D4755826D9326100F51188 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755726D9326100F51188 /* Date.swift */; };
+		55D4755A26D948C300F51188 /* SkillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D4755926D948C300F51188 /* SkillCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		55D4755226D6DBBD00F51188 /* NetworkResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResponseModel.swift; sourceTree = "<group>"; };
 		55D4755426D79E5700F51188 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		55D4755726D9326100F51188 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		55D4755926D948C300F51188 /* SkillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 			children = (
 				55D4752A26D6D2EE00F51188 /* MainViewController.swift */,
 				55D4755426D79E5700F51188 /* MainTableViewCell.swift */,
+				55D4755926D948C300F51188 /* SkillCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D4755A26D948C300F51188 /* SkillCollectionViewCell.swift in Sources */,
 				55D4755326D6DBBD00F51188 /* NetworkResponseModel.swift in Sources */,
 				55D4754026D6D44800F51188 /* ServiceLayer.swift in Sources */,
 				55D4753C26D6D3B100F51188 /* Assembler.swift in Sources */,

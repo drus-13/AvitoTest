@@ -15,14 +15,14 @@ struct Constants {
     
     // MARK: - Table Parameters
     enum MainCellSize {
-        static let cellHeight: CGFloat = 120
+        static let cellHeight: CGFloat = 150
     }
     
     // MARK: - Cell Parameters
     enum CellParametersSize {
         static let indentHeight: CGFloat = 10
         static let indentWidth: CGFloat = 16
-        static let labelHeight: CGFloat = 30
+        static let labelHeight: CGFloat = (MainCellSize.cellHeight - 3*indentHeight)/3
     }
     
     // MARK: - Cache Delay
