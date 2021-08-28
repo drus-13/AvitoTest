@@ -92,11 +92,13 @@ class MainTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Setup LayoutSubviews
     override func layoutSubviews() {
         super.layoutSubviews()
         setupCell()
     }
     
+    // MARK: - Setup Cell
     private func setupCell() {
         contentView.layer.backgroundColor = UIColor.systemGray4.cgColor
         contentView.layer.cornerRadius = 25
