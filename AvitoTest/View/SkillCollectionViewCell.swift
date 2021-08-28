@@ -54,7 +54,7 @@ class SkillCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Set Data In Cell
-    func setDataInCell(data: String) {
+    func setDataInCell(data: String? = "") {
         skillLabel.text = data
     }
 }
