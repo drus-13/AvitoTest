@@ -84,6 +84,11 @@ class MainViewController: UIViewController, MainViewPresenterInput {
     func showResponseData() {
         updateTableView()
     }
+    
+    // MARK: - Show Alert
+    func showAlert(error: Error) {
+        showAlerts(error: error)
+    }
 }
 
 extension MainViewController: UITableViewDataSource {
