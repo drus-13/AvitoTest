@@ -8,5 +8,5 @@
 import Foundation
 
 protocol MainViewPresenterInput: AnyObject {
-    func showResponseData(data: NetworkResponseModel)
+    func showResponseData()
 }

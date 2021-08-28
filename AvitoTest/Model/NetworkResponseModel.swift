@@ -8,19 +8,23 @@
 import Foundation
 
 // MARK: - NetworkResponseModel
-struct NetworkResponseModel: Codable {
-    let company: Company
+class NetworkResponseModel: Codable {
+    var company: Company
 }
 
 // MARK: - Company
 struct Company: Codable {
     let name: String
-    let employees: [Employee]
+    var employees: [Employee]
+    
+    mutating func sortEmployees() {
+        self.employees.sort { return $0.name < $1.name }
+    }
 }
 
 // MARK: - Employee
 struct Employee: Codable {
-    let name, phoneNumber: String
+    var name, phoneNumber: String
     let skills: [String]
 
     enum CodingKeys: String, CodingKey {
