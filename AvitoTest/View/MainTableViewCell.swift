@@ -144,7 +144,7 @@ extension MainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let skill = delegate?.getSkillsData(index: index)[indexPath.row]
-        let size: CGSize = skill!.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 18.0)])
+        let size: CGSize = skill!.size(withAttributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
 
         return CGSize(width: size.width + 20, height: Constants.CellParametersSize.labelHeight)
     }

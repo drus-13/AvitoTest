@@ -14,7 +14,7 @@ class SkillCollectionViewCell: UICollectionViewCell {
     private lazy var skillLabel: UILabel = {
         let label = UILabel()
         label.text = "defaultSkill"
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -30,18 +30,24 @@ class SkillCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Layout Subviews
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureCell()
+    }
+    
+    
     // MARK: - Skill Label Constraints
     private func setupSkillLabelConstraints() {
-        addSubview(skillLabel)
+        contentView.addSubview(skillLabel)
         skillLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         skillLabel.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        layer.backgroundColor = UIColor.yellow.cgColor
-        contentView.layer.cornerRadius = 5
+    // MARK: - Configure Cell
+    private func configureCell() {
+        contentView.layer.backgroundColor = UIColor.yellow.cgColor
+        contentView.layer.cornerRadius = 15
         contentView.layer.borderColor = UIColor.black.cgColor
         contentView.layer.borderWidth = 2.5
         contentView.layer.masksToBounds = true
