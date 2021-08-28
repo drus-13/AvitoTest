@@ -27,5 +27,5 @@ struct Constants {
     }
     
     // MARK: - Cache Delay
-    static let cacheDelayInMinutes: Int = 0
+    static let cacheDelayInMinutes: Int = 60
 }

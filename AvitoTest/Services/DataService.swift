@@ -44,6 +44,7 @@ class DataService: DataServiceProtocol {
                     completion(.failure(error))
                 case .success(let model):
                     completion(.success(model))
+                    self.cacheService.setDataCache(data: model)
                 }
             }
             return
