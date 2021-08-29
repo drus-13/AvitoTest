@@ -11,10 +11,14 @@ final class ServiceLayer {
     // MARK: - Public Properties
     static let shared = ServiceLayer()
 
+    let dataService: DataService
     let networkService: Network
+    let cacheService: Cache
     
     // MARK: - Initializers
     private init() {
         self.networkService = NetworkService()
+        self.cacheService = CacheService()
+        self.dataService = DataService(networkService: networkService, cacheService: cacheService)
     }
 }

@@ -15,7 +15,7 @@ class Assembler: AssemblerProtocol {
     let serviceLayer: ServiceLayer = ServiceLayer.shared
     
     func main() -> UIViewController {
-        let presenter = MainViewPresenter(networkService: serviceLayer.networkService)
+        let presenter = MainViewPresenter(dataService: ServiceLayer.shared.dataService)
         
         let view = MainViewController()
         view.presenter = presenter

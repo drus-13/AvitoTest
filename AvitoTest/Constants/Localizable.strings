@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  AvitoTest
+
+  Created by Andrey on 28.08.2021.
+  
+*/
+
+/* Internet Connection Errors */
+"error.default" = "Something went wrong";
+"error.unknown" = "Unknown Error";
