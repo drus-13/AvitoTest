@@ -11,14 +11,15 @@ protocol Network: AnyObject {
     func requestData<M: Decodable>(url: URL, _ completion: @escaping(Result<M, Error>) -> Void)
 }
 
-class NetworkService: Network {
+class NetworkService: NSObject, Network {
     // MARK: - Private Properties
-    private let session: URLSession
-    
-    // MARK: - Initializers
-    init(session: URLSession = URLSession(configuration: .default)) {
-        self.session = session
-    }
+    private lazy var session: URLSession = {
+        let config = URLSessionConfiguration.default
+        config.waitsForConnectivity = true
+        
+        let session: URLSession = URLSession(configuration: config, delegate: self, delegateQueue: .main)
+        return session
+    }()
     
     // MARK: - Request Data
     func requestData<M: Decodable>(url: URL, _ completion: @escaping(Result<M, Error>) -> Void) {
@@ -49,6 +50,14 @@ class NetworkService: Network {
             }
         }
         dataTask.resume()
+    }
+}
+
+// MARK: - URLSessionTaskDelegate
+extension NetworkService: URLSessionTaskDelegate {
+    
+    func urlSession(_ session: URLSession, taskIsWaitingForConnectivity task: URLSessionTask) {
+        print("No connect")
     }
 }
 

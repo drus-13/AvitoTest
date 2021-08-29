@@ -12,6 +12,7 @@ class MainViewController: UIViewController, MainViewPresenterInput {
     private lazy var responseTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -36,10 +37,10 @@ class MainViewController: UIViewController, MainViewPresenterInput {
     // MARK: - Response Table View Constraints
     private func setupResponseTableViewConstraints() {
         view.addSubview(responseTableView)
-        responseTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        responseTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        responseTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        responseTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        responseTableView.constraint(leading: view.leadingAnchor)
+        responseTableView.constraint(trailing: view.trailingAnchor)
+        responseTableView.constraint(top: view.topAnchor)
+        responseTableView.constraint(bottom: view.bottomAnchor)
     }
     
     // MARK: - Update Cells
@@ -52,6 +53,7 @@ class MainViewController: UIViewController, MainViewPresenterInput {
         cell.setDataInCell(data: employee)
         cell.setIndex(index: indexPath.row)
         cell.setMainViewController(controller: self)
+        
         return cell
     }
     
@@ -87,10 +89,11 @@ class MainViewController: UIViewController, MainViewPresenterInput {
     
     // MARK: - Show Alert
     func showAlert(error: Error) {
-        showAlerts(error: error)
+        self.showAlerts(error: error)
     }
 }
 
+// MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -106,8 +109,10 @@ extension MainViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
 extension MainViewController: UITableViewDelegate { }
 
+// MARK: - MainTableViewCellDelegate
 extension MainViewController: MainTableViewCellDelegate {
     
     func getSkillsData(index: Int) -> [String] {

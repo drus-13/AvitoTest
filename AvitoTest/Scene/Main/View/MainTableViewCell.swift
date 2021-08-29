@@ -84,7 +84,6 @@ class MainTableViewCell: UITableViewCell {
     // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         configure()
     }
     
@@ -100,11 +99,6 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - Setup Cell
     private func setupCell() {
-        contentView.layer.backgroundColor = UIColor.systemGray4.cgColor
-        contentView.layer.cornerRadius = 25
-        contentView.layer.masksToBounds = true
-        
-        selectionStyle = .none
         let space: CGFloat = 10.0
         contentView.frame = self.contentView.frame.inset(by: UIEdgeInsets(top: 0, left: space, bottom: space, right: space))
     }
@@ -112,80 +106,55 @@ class MainTableViewCell: UITableViewCell {
     // MARK: - Label For Name Constraints
     private func setupLabelForNameConstraints() {
         contentView.addSubview(labelForName)
-        labelForName.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        
-        labelForName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                              constant: Constants.CellParametersSize.indentWidth).isActive = true
-        
-        labelForName.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                               constant: -Constants.CellParametersSize.indentWidth).isActive = true
-        labelForName.heightAnchor.constraint(equalToConstant: Constants.CellParametersSize.labelHeight).isActive = true
+        labelForName.constraint(leading: contentView.leadingAnchor, Constants.CellParametersSize.indentWidth)
+        labelForName.constraint(trailing: contentView.trailingAnchor, Constants.CellParametersSize.indentWidth)
+        labelForName.constraint(top: contentView.topAnchor)
+        labelForName.constraint(height: Constants.CellParametersSize.labelHeight)
     }
     
     // MARK: - Name Label Constraints
     private func setupNameLabelConstraints() {
         contentView.addSubview(nameLabel)
-        nameLabel.topAnchor.constraint(equalTo: labelForName.bottomAnchor,
-                                       constant: Constants.CellParametersSize.indentHeight).isActive = true
-        
-        nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                           constant: 2*Constants.CellParametersSize.indentWidth).isActive = true
-        
-        nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                            constant: -Constants.CellParametersSize.indentWidth).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: Constants.CellParametersSize.labelHeight).isActive = true
+        nameLabel.constraint(leading: contentView.leadingAnchor, Constants.CellParametersSize.indentWidth)
+        nameLabel.constraint(trailing: contentView.trailingAnchor, 2*Constants.CellParametersSize.indentWidth)
+        nameLabel.constraint(top: labelForName.bottomAnchor, Constants.CellParametersSize.indentHeight)
+        nameLabel.constraint(height: Constants.CellParametersSize.labelHeight)
     }
     
     // MARK: - Label For Phone Constraints
     private func setupLabelForPhoneConstraints() {
         contentView.addSubview(labelForPhone)
-        labelForPhone.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,
-                                           constant: Constants.CellParametersSize.indentHeight).isActive = true
-        
-        labelForPhone.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                               constant: Constants.CellParametersSize.indentWidth).isActive = true
-        
-        labelForPhone.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                                constant: -Constants.CellParametersSize.indentWidth).isActive = true
-        labelForPhone.heightAnchor.constraint(equalToConstant: Constants.CellParametersSize.labelHeight).isActive = true
+        labelForPhone.constraint(leading: contentView.leadingAnchor, Constants.CellParametersSize.indentWidth)
+        labelForPhone.constraint(trailing: contentView.trailingAnchor, Constants.CellParametersSize.indentWidth)
+        labelForPhone.constraint(top: nameLabel.bottomAnchor)
+        labelForPhone.constraint(height: Constants.CellParametersSize.labelHeight)
     }
     
     // MARK: - Phone Label Constraints
     private func setupPhoneLabelConstraints() {
         contentView.addSubview(phoneLabel)
-        phoneLabel.topAnchor.constraint(equalTo: labelForPhone.bottomAnchor,
-                                        constant: Constants.CellParametersSize.indentHeight).isActive = true
-        
-        phoneLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                            constant: 2*Constants.CellParametersSize.indentWidth).isActive = true
-        
-        phoneLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                             constant: -Constants.CellParametersSize.indentWidth).isActive = true
-        phoneLabel.heightAnchor.constraint(equalToConstant: Constants.CellParametersSize.labelHeight).isActive = true
+        phoneLabel.constraint(leading: contentView.leadingAnchor, Constants.CellParametersSize.indentWidth)
+        phoneLabel.constraint(trailing: contentView.trailingAnchor, 2*Constants.CellParametersSize.indentWidth)
+        phoneLabel.constraint(top: labelForPhone.bottomAnchor, Constants.CellParametersSize.indentHeight)
+        phoneLabel.constraint(height: Constants.CellParametersSize.labelHeight)
     }
     
     // MARK: - Label For Skills Constraints
     private func setupLabelForSkillsConstraints() {
         contentView.addSubview(labelForSkills)
-        labelForSkills.topAnchor.constraint(equalTo: phoneLabel.bottomAnchor,
-                                            constant: Constants.CellParametersSize.indentHeight).isActive = true
-        
-        labelForSkills.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                                constant: Constants.CellParametersSize.indentWidth).isActive = true
-        
-        labelForSkills.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
-                                                 constant: -Constants.CellParametersSize.indentWidth).isActive = true
-        labelForSkills.heightAnchor.constraint(equalToConstant: Constants.CellParametersSize.labelHeight).isActive = true
+        labelForSkills.constraint(leading: contentView.leadingAnchor, Constants.CellParametersSize.indentWidth)
+        labelForSkills.constraint(trailing: contentView.trailingAnchor, Constants.CellParametersSize.indentWidth)
+        labelForSkills.constraint(top: phoneLabel.bottomAnchor)
+        labelForSkills.constraint(height: Constants.CellParametersSize.labelHeight)
     }
     
     // MARK: - Skills Collection View Constraints
     private func setupSkillsCollectionViewConstraints() {
         contentView.addSubview(skillsCollectionView)
-        skillsCollectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                                      constant: 2*Constants.CellParametersSize.indentWidth).isActive = true
-        skillsCollectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.CellParametersSize.indentWidth).isActive = true
-        skillsCollectionView.topAnchor.constraint(equalTo: labelForSkills.bottomAnchor, constant: Constants.CellParametersSize.indentHeight).isActive = true
-        skillsCollectionView.heightAnchor.constraint(equalToConstant: Constants.CellParametersSize.labelHeight).isActive = true
+        skillsCollectionView.constraint(leading: contentView.leadingAnchor, Constants.CellParametersSize.indentWidth)
+        skillsCollectionView.constraint(trailing: contentView.trailingAnchor, 2*Constants.CellParametersSize.indentWidth)
+        skillsCollectionView.constraint(top: labelForSkills.bottomAnchor, Constants.CellParametersSize.indentHeight)
+        skillsCollectionView.constraint(height: Constants.CellParametersSize.labelHeight)
     }
     
     // MARK: - Setup Skills Collection View
@@ -198,6 +167,13 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - Configure
     private func configure() {
+        contentView.layer.backgroundColor = UIColor.systemGray4.cgColor
+        contentView.layer.cornerRadius = 25
+        contentView.layer.masksToBounds = true
+        
+        selectionStyle = .none
+        
+        
         setupLabelForNameConstraints()
         setupNameLabelConstraints()
         
@@ -226,7 +202,8 @@ class MainTableViewCell: UITableViewCell {
     }
 }
 
-extension MainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+// MARK: - UICollectionViewDataSource
+extension MainTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return delegate?.getSkillsData(index: index).count ?? 0
@@ -242,6 +219,10 @@ extension MainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         cell.setDataInCell(data: skill)
         return cell
     }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension MainTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -252,3 +233,6 @@ extension MainTableViewCell: UICollectionViewDelegate, UICollectionViewDataSourc
         return CGSize(width: size.width + 2*Constants.CellParametersSize.indentWidth, height: Constants.CellParametersSize.labelHeight)
     }
 }
+
+// MARK: - UICollectionViewDelegate
+extension MainTableViewCell: UICollectionViewDelegate { }
